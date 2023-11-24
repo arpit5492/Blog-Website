@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("./partials/header.ejs") %>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen bg-gray-200">
   <!-- navbar section -->
   <%- include("./partials/navbar.ejs") %>
   <!-- Showing all the blogs -->
 <div class="flex-col">
     <% if(blogs.length>0){ %>
       <% blogs.forEach(blog=>{ %>
-        <ul class="list-disc pl-5">
+        <div class="overflow-x-auto">
+        <ul class="list-disc pl-5 sm:pl-5">
           <li>
-            <h1 class="font-bold text-lg ml-4 mt-4 mb-2">
+            <h1 class="font-bold text-lg ml-4 sm:ml-4 mt-4 mb-2">
               <a href="/" class="text-blue-600 hover:text-blue-800">
                 <%= blog['blog title'] %>
               </a>
             </h1>
           </li>
         </ul>
-        <p class="text-gray-700 text-base ml-7 mb-4">
+        <p class="text-gray-700 text-base sm:ml-7 ml-7 mb-4">
           <%= blog['blog snippet'] %>
         </p>
+      </div>
       <% }); %>
         
     <% } else { %>

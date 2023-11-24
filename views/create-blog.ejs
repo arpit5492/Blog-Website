@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("./partials/header.ejs") %>
-<body>
+<body class="bg-gray-400">
   <!-- navbar section -->
   <%- include("./partials/navbar.ejs") %>
+  <!-- blog creation form -->
+  <form action="/" method="post" class="max-w-lg mx-auto my-5 p-8 bg-blue-400 shadow-lg rounded-lg">
+    <div class="mb-6">
+      <label for="title" class="block mb-2 text-lg font-medium text-gray-900 dark:text-black">Blog Title:</label>
+      <input type="text" name="title" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    </div>
+    <div class="mb-6">
+      <label for="snippet" class="block mb-2 text-lg font-medium text-gray-900 dark:text-black">Blog Snippet:</label>
+      <input type="text" name="snippet" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    </div>
+    <div class="mb-6">
+      <label for="body" class="block mb-2 text-lg font-medium text-gray-900 dark:text-black">Blog Body:</label>
+      <textarea name="body" id="" cols="30" rows="10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+    </div>
+    <button class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+  </form>
   
 
 
 <!-- Footer section -->
-  <%- include("./partials/footer.ejs") %>
 </body>
 </html>
